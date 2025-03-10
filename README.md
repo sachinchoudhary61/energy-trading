@@ -23,6 +23,29 @@ This project is an **open-source energy trading platform** built with **Elixir P
 3. **Data Processing**: The data is structured and stored in **DynamoDB**.
 4. **Visualization & Trading**: Consumers can see live energy availability and bid accordingly.
 
+## AWS Setup Guide
+### Why AWS?
+To simulate real-world energy trading, we use **AWS IoT Core** for device communication and **DynamoDB** for scalable data storage. AWS provides a free-tier account where users can access free credits, making it easy to experiment without incurring costs.
+
+### Setting Up AWS
+1. **Create an AWS Free Tier Account**:
+   - Visit [AWS Free Tier](https://aws.amazon.com/free/) and sign up.
+   - AWS offers free usage credits for new users, allowing them to experiment with IoT Core and DynamoDB.
+
+2. **Set Up AWS IoT Core**:
+   - Navigate to the AWS IoT Core service.
+   - Create a new **Thing** (representing a power unit device).
+   - Generate security certificates and policies for MQTT communication.
+   - Create an **MQTT topic** where power units will publish data.
+
+3. **Configure DynamoDB**:
+   - Open the **DynamoDB** service in AWS.
+   - Create a new table (e.g., `power_units_data`) with a **primary key** for identifying power unit records.
+
+4. **Obtain AWS Credentials**:
+   - Generate IAM user credentials with appropriate permissions.
+   - Store the AWS access key and secret key in your environment variables.
+
 ## Installation & Setup
 ### Prerequisites
 - **Elixir & Phoenix** installed ([Installation Guide](https://hexdocs.pm/phoenix/installation.html))
@@ -52,5 +75,3 @@ This project is an **open-source energy trading platform** built with **Elixir P
 
 ## Contribution
 We welcome contributions! Feel free to open issues, suggest features, or submit PRs.
-
-
